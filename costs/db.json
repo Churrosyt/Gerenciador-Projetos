@@ -362,6 +362,17 @@
       "cost": 0,
       "services": [],
       "id": 33
+    },
+    {
+      "name": "hnuin",
+      "budget": "098089",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 34
     }
   ],
   "categories": [
