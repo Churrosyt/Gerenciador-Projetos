@@ -76,6 +76,17 @@
       "cost": 0,
       "services": [],
       "id": 7
+    },
+    {
+      "name": "novo",
+      "budget": "1221",
+      "category": {
+        "id": "3",
+        "name": "Desing"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 8
     }
   ],
   "categories": [
