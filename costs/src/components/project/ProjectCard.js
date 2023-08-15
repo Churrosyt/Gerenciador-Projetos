@@ -8,7 +8,7 @@ function ProjectCard({ id, name, budget, category, handleRemove }) {
 
     const remove = (e) => { // 
         e.preventDefault() // para nenhum outro evento ser executado
-        handleRemove(id) // passando o id no handleRemove para ele passar para o componente superior
+        handleRemove(id) // passando o id no handleRemove para ele passar para o componente superior projects
     }
 
     return (
