@@ -15,6 +15,7 @@ function Project() {
 
     const [project, setProject] = useState([]);
     const [showProjectForm, setShowProjectForm] = useState(false);
+    const [showServiceForm, setShowServiceForm] = useState(false);
     const [message, setMessage] = useState()
     const [type, setType] = useState()
 
@@ -39,10 +40,11 @@ function Project() {
     }, [id]); //nossa referencia para monitoração
 
     function editPost(project){
+        setMessage('')
         // budget validation
         if(project.budget < project.cost) {
             setMessage('O orçamento não pode ser menor que o custo do projeto')
-            setType('error')
+            setType('erro')
             return false
         }
         fetch(`http://localhost:5000/projects/${project.id}`, {
@@ -66,13 +68,17 @@ function Project() {
         setShowProjectForm(!showProjectForm); // negativo de projectform. se esta true vira false e vice e versa
     }
 
+    function toggleServiceForm() {
+        setShowServiceForm(!showServiceForm); // negativo de projectform. se esta true vira false e vice e versa
+    }
+
     return (
         <>
             {project.name ? (
                 <div className={styles.project_details}>
                     <Container customClass="column">
                         {message && <Message type={type} msg={message}/>}
-                        <div className={styles.project_container}>
+                        <div className={styles.details_container}>
                             <h1>Projeto: {project.name}</h1>
                             <button
                                 className={styles.btn}
@@ -108,6 +114,25 @@ function Project() {
                                 </div>
                             )}
                         </div>
+                        <div className={styles.service_form_container}>
+                                <h2>Adicione um serviço:</h2>
+                                <button
+                                className={styles.btn}
+                                onClick={toggleServiceForm}
+                            >
+                                {!showServiceForm ? "Adiconar serviço" : "fechar"}
+                                {/* Se nao tiver ShowprojectForm sendo exibido, eu vou exibir editar projeto 
+                               cas o contrario eu exibo fechar */}
+                            </button>
+                            <div className={styles.project_info}>
+                               {showServiceForm && <div>formulário do serviço</div> }
+                               {/* se showServiceForm estiver abilitado, abilite o formulário do serviço */}
+                            </div>
+                        </div>
+                        <h2>Serviço</h2>
+                        <Container customClass="start">
+                               <p>Itens de serviço</p>
+                        </Container>
                     </Container>
                 </div>
             ) : (
