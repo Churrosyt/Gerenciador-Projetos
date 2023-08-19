@@ -7,8 +7,33 @@
         "id": "3",
         "name": "Desing"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 1514,
+      "services": [
+        {
+          "name": "Thais ",
+          "cost": "323",
+          "id": "e518d1ad-bdc5-46b1-a3b9-16a36c7efdc5",
+          "description": "t"
+        },
+        {
+          "name": "Thais ",
+          "cost": "323",
+          "id": "e518d1ad-bdc5-46b1-a3b9-16a36c7efdc5",
+          "description": "t"
+        },
+        {
+          "name": "Thais ",
+          "cost": "323",
+          "id": "e518d1ad-bdc5-46b1-a3b9-16a36c7efdc5",
+          "description": "t"
+        },
+        {
+          "name": "fds",
+          "cost": "545",
+          "description": "fg",
+          "id": "8183228b-8abf-4025-b1f3-4adae3dc2e99"
+        }
+      ],
       "id": 2
     }
   ],
