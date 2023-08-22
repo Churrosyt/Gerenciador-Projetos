@@ -7,7 +7,7 @@
         "id": "3",
         "name": "Desing"
       },
-      "cost": 1514,
+      "cost": null,
       "services": [
         {
           "name": "Thais ",
@@ -32,9 +32,81 @@
           "cost": "545",
           "description": "fg",
           "id": "8183228b-8abf-4025-b1f3-4adae3dc2e99"
+        },
+        {
+          "id": "a5ea1cd9-0f72-42c9-ae95-c76449cf482c"
+        },
+        {
+          "id": "a5ea1cd9-0f72-42c9-ae95-c76449cf482c"
+        },
+        {
+          "name": "Thais ",
+          "cost": "9",
+          "description": "fg",
+          "id": "82c2bf50-0e8a-4936-aa30-48cfae6d84cb"
+        },
+        {
+          "name": "Thais ",
+          "cost": "9",
+          "description": "fg",
+          "id": "82c2bf50-0e8a-4936-aa30-48cfae6d84cb"
+        },
+        {
+          "name": "Thais ",
+          "cost": "12",
+          "description": "fg",
+          "id": "91e842f6-9d2a-45c5-accb-129428dc0d8e"
+        },
+        {
+          "name": "Thais ",
+          "cost": "12",
+          "description": "fg",
+          "id": "91e842f6-9d2a-45c5-accb-129428dc0d8e"
+        },
+        {
+          "name": "Thais ",
+          "cost": "12",
+          "description": "fg",
+          "id": "91e842f6-9d2a-45c5-accb-129428dc0d8e"
+        },
+        {
+          "name": "Thais ",
+          "cost": "12",
+          "description": "fg",
+          "id": "91e842f6-9d2a-45c5-accb-129428dc0d8e"
         }
       ],
       "id": 2
+    },
+    {
+      "name": "fdsfas",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "budget": "3232",
+      "cost": 153,
+      "services": [
+        {
+          "name": "Thais ",
+          "cost": "89",
+          "description": "fg",
+          "id": "540c228b-c111-4648-ae8f-77693ddead27"
+        },
+        {
+          "name": "fds",
+          "cost": "32",
+          "description": "fg",
+          "id": "4d4099ce-c3fc-4ca3-87ef-0642a3092d99"
+        },
+        {
+          "name": "fds",
+          "cost": "32",
+          "description": "fg",
+          "id": "a9fe8071-4ec6-47b3-918b-ff1d7d7e06aa"
+        }
+      ],
+      "id": 3
     }
   ],
   "categories": [

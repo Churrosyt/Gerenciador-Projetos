@@ -1,22 +1,20 @@
-import {parse, v4 as uuidv4} from 'uuid'
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
-import styles from "./Project.module.css";
-
-import { useParams } from "react-router-dom"; // para pegarmos o id pela url
-import { useState, useEffect } from "react";
-
-import Loading from "../layout/Loading";
-
-import Container from "../layout/Container";
-
-import Message from "../layout/Message";
-import ProjectForm from "../project/ProjectForm";
-import ServiceForm from "../Service/ServiceForm";
+import Container from '../layout/Container';
+import Loading from '../layout/Loading';
+import Message from '../layout/Message';
+import ProjectForm from '../project/ProjectForm';
+import ServiceForm from '../Service/ServiceForm';
+import styles from './Project.module.css';
+import ServiceCard from '../Service/ServiceCard'
 
 function Project() {
     const { id } = useParams(); // ele sabe que iremos pegar o id a partir da URL
 
     const [project, setProject] = useState([]);
+    const [services, setServices] = useState([]);
     const [showProjectForm, setShowProjectForm] = useState(false);
     const [showServiceForm, setShowServiceForm] = useState(false);
     const [message, setMessage] = useState()
@@ -37,6 +35,7 @@ function Project() {
                 .then((data) => {
                     // pegar os dados e usar eles
                     setProject(data);
+                    setServices(data.services)
                 })
                 .catch((err) => console.log);
         }, 300);
@@ -71,7 +70,7 @@ function Project() {
         setMessage('')
 
        // last service
-       const lastService = project.services[project.services.length - 1] 
+       const lastService = project.services[project.services.length - 1]
 
        lastService.id = uuidv4()
 
@@ -99,10 +98,13 @@ function Project() {
         body: JSON.stringify(project)
        }).then((resp) => resp.json())
        .then(data => {
-        // exibir os serviços
-        console.log(data)
+        setShowServiceForm(false)
        })
        .catch(err => console.log(err))
+
+    }
+
+    function removeService(){
 
     }
 
@@ -164,7 +166,7 @@ function Project() {
                             >
                                 {!showServiceForm ? "Adiconar serviço" : "fechar"}
                                 {/* Se nao tiver ShowprojectForm sendo exibido, eu vou exibir editar projeto 
-                               cas o contrario eu exibo fechar */}
+                               caso contrario eu exibo fechar */}
                             </button>
                             <div className={styles.project_info}>
                                {showServiceForm && (
@@ -179,9 +181,22 @@ function Project() {
                         </div>
                         <h2>Serviço</h2>
                         <Container customClass="start">
-                               <p>Itens de serviço</p>
+                               {services.length > 0 && // se for maior que 0 exibir
+                                services.map((service) => ( // usar parenteses pq ele tem que retornar um objeto
+                                    <ServiceCard  
+                                    id={service.id}
+                                    name={service.name}
+                                    cost={service.cost}
+                                    description={service.description}
+                                    key={service.id}
+                                    handleRemove={removeService}
+                                    /> 
+                                ))
+                               }
+                               {services.length === 0 && <p>Não há serviços cadastrados </p>
+                               } 
                         </Container>
-                    </Container> 
+                     </Container> 
                 </div>
             ) : (
                 <Loading />
